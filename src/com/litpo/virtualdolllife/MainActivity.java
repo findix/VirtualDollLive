@@ -2,6 +2,7 @@ package com.litpo.virtualdolllife;
 
 import java.util.concurrent.ExecutionException;
 
+import com.litpo.virtualdolllife.calendar.CalendarGetter;
 import com.litpo.virtualdolllife.pojos.Weather;
 import com.litpo.virtualdolllife.thread.AsynoTaskImpl;
 
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				System.out.println(CalendarGetter.isBusy(MainActivity.this));
 				AsynoTaskImpl asynoTaskImpl = new AsynoTaskImpl();
 				asynoTaskImpl.execute(MainActivity.this);
 				try {
@@ -46,9 +48,10 @@ public class MainActivity extends Activity {
 							+ weather.getStatus() + "\n紫外线:" + weather.getZwx()
 							+ "\nPM2.5:" + weather.getPm2_5() + "\n风向:"
 							+ weather.getDirection1() + "\n风力大小:"
-							+ weather.getPower1();
+							+ weather.getPower1() + "\n今天忙不忙:"
+							+ CalendarGetter.isBusy(MainActivity.this);
 					text_weather.setText(weatherString);
-				}else{
+				} else {
 					text_weather.setText("网络异常");
 				}
 			}

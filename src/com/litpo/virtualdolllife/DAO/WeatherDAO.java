@@ -2,6 +2,7 @@ package com.litpo.virtualdolllife.DAO;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,11 +35,11 @@ public class WeatherDAO {
 			weather.setPower1(map.get("power1").toString());
 
 			// ªÒ»°PM2.5
-			// URI uri = URI.create(city);
-			// link = "http://www.pm25.in/api/querys/pm2_5.json?city="
-			// + uri.toASCIIString()
-			// + "&token=5j1znBVAsnSf5xQyNQyq&stations=no";
-			link = "http://ddns.find1x.com/pm2_5.json";
+			 URI uri = URI.create(city);
+			 link = "http://www.pm25.in/api/querys/pm2_5.json?city="
+			 + uri.toASCIIString()
+			 + "&token=5j1znBVAsnSf5xQyNQyq&stations=no";
+//			link = "http://ddns.find1x.com/pm2_5.json";
 			url = new URL(link);
 			JsonParser jsonParser = new JsonParser();
 			HashMap<String, String> mapPollution = jsonParser.getPollution(url);

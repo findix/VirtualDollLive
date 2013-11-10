@@ -36,7 +36,7 @@ public class JsonParser {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		data = data.substring(2, data.length() - 1);// 换成官方服务器的时候一定要把2改成1！！
+		data = data.substring(1, data.length() - 1);// 换成官方服务器的时候一定要把2改成1！！
 		return data;
 	}
 
