@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/text_weather"
         android:layout_alignParentTop="true"
-        android:text="获得天气" />
+        android:text="@string/getWeather" />
 
     <TextView
         android:id="@+id/text_weather"
@@ -23,5 +23,13 @@
         android:layout_below="@+id/btn_getWeather"
         android:layout_centerHorizontal="true"
         android:text="" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/btn_getWeather"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

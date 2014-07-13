@@ -6,8 +6,7 @@ import android.net.NetworkInfo;
 
 public class NetworkDetector {  
 	   
-    public static boolean detect(Context act) {  
-        
+    public static boolean detect(Context act) {          
        ConnectivityManager manager = (ConnectivityManager) act  
               .getApplicationContext().getSystemService(  
                      Context.CONNECTIVITY_SERVICE);  
